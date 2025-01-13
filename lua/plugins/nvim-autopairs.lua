@@ -8,6 +8,16 @@ return {
   event = {
     "InsertEnter",
   },
+  init = function()
+    vim.keymap.set("n", "<leader>op", function()
+      require("nvim-autopairs").toggle()
+      if require("nvim-autopairs").state.disabled then
+        vim.notify("Toggled Off", vim.log.levels.INFO, { title = "nvim-autopairs" })
+      else
+        vim.notify("Toggled On", vim.log.levels.INFO, { title = "nvim-autopairs" })
+      end
+    end, { desc = "Autopairs | Toggle", silent = true })
+  end,
   config = function(_, opts)
     require("nvim-autopairs").setup(opts)
 
