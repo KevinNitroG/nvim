@@ -62,7 +62,7 @@ vim.opt.whichwrap:append "<>[]hl"
 if vim.fn.executable "rg" then
   local rgignore = vim.fn.getenv "HOME" .. "/.config/ripgrep/.rgignore"
   vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file "
-    .. (vim.fn.filereadable(rgignore) and rgignore or vim.fn.stdpath "config" .. "config/ripgrep/.rgignore")
+    .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath "config" .. "/.config/ripgrep/.rgignore")
 end
 
 for name, value in pairs(options) do
