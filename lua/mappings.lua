@@ -361,7 +361,7 @@ vim.keymap.set("n", "<leader>nr", function()
 end, { desc = "Neovim | Run Code", silent = true })
 
 vim.keymap.set("n", "<leader>np", function()
-  vim.notify(vim.api.nvim_buf_get_name(0))
+  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
 -- Clean
