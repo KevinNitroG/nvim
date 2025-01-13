@@ -221,7 +221,7 @@ M.base46 = {
     "trouble",
     "whichkey",
     "blankline",
-    -- "lspsaga", -- Not to use this because it's suck on transparent
+    "lspsaga", -- override NvChad's background in highlights.lua
   },
 }
 
