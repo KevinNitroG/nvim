@@ -12,4 +12,7 @@ return {
     "moll/vim-bbye",
     cmd = { "Bdelete", "Bwipeout" },
   },
+  {
+    "luarocks/hererocks", -- For not being deleted. lazy.nvim will use it.
+  },
 }
