@@ -19,7 +19,7 @@ return {
       -- cpp = { "cpplint" },
       -- markdown = { "markdownlint" },
       bash = { "shellcheck" },
-      ["yaml.github"] = { "actionlint" },
+      github = { "actionlint" },
       javascript = { "eslint" },
       javascriptreact = { "eslint" },
       latex = { "vale" },
