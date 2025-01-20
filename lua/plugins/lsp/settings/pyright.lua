@@ -1,9 +1,9 @@
 return {
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
   settings = {
     python = {
       analysis = {
         -- If use ruff, uncomment, but
-        -- TODO:  check the config again
         -- ignore = { "*" },
         typeCheckingMode = "standard",
         diagnosticMode = "workspace",
@@ -11,7 +11,7 @@ return {
     },
     pyright = {
       -- If use Ruff's import organizer, uncomment
-      disableOrganizeImports = true,
+      -- disableOrganizeImports = true,
     },
   },
 }

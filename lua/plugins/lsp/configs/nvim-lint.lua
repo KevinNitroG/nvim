@@ -6,10 +6,6 @@ return {
   enabled = true,
   config = function()
     local linters = require("lint").linters
-    vim.list_extend(linters.ruff.args, {
-      "--select=I",
-      "--ignore=F401",
-    })
     vim.list_extend(linters.eslint.args, {
       "--flag",
       "unstable_config_lookup_from_file", -- for fixing file is ignored because it is located outside of the base path on my Windows
@@ -23,7 +19,7 @@ return {
       javascript = { "eslint" },
       javascriptreact = { "eslint" },
       latex = { "vale" },
-      -- python = { "ruff" }, -- Already used ruff-lsp
+      python = { "ruff" }, -- Already used ruff-lsp
       sh = { "shellcheck" },
       typescript = { "eslint" },
       typescriptreact = { "eslint" },

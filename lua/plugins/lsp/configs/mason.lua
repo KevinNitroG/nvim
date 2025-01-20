@@ -43,6 +43,13 @@ return {
         "jdtls",
         "rust_analyzer",
         "ts_ls",
+        "ruff",
+      }
+
+      local opts = {
+        on_attach = on_attach,
+        on_init = on_init,
+        capabilities = capabilities,
       }
 
       mason_lspconfig.setup_handlers {
@@ -53,15 +60,10 @@ return {
               return
             end
           end
-          local opts = {
-            on_attach = on_attach,
-            on_init = on_init,
-            capabilities = capabilities,
-          }
 
           local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
           if require_ok then
-            opts = vim.tbl_deep_extend("keep", server, opts)
+            opts = vim.tbl_deep_extend("keep", opts, server)
           end
 
           require("lspconfig")[server_name].setup(opts)
