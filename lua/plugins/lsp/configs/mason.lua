@@ -46,12 +46,6 @@ return {
         "ruff",
       }
 
-      local opts = {
-        on_attach = on_attach,
-        on_init = on_init,
-        capabilities = capabilities,
-      }
-
       mason_lspconfig.setup_handlers {
         -- Automatically configure the LSP installed
         function(server_name)
@@ -60,6 +54,12 @@ return {
               return
             end
           end
+
+          local opts = {
+            on_attach = on_attach,
+            on_init = on_init,
+            capabilities = capabilities,
+          }
 
           local require_ok, server = pcall(require, "plugins.lsp.settings." .. server_name)
           if require_ok then
