@@ -42,9 +42,7 @@ end
 require "options"
 require "nvchad.autocmds"
 require "core.commands"
-
-vim.schedule(function()
-  require "mappings"
-end)
-
-require "myinit"
+require "core.autocommands"
+require "core.filetypes"
+require "core.utils"
+require "mappings"

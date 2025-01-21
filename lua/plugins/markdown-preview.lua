@@ -11,7 +11,7 @@ local fts = {
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
-  enabled = true,
+  cond = true,
   keys = {
     {
       "<leader>mp",

@@ -1,5 +1,3 @@
--- Move from options.lua
-
 -- add binaries installed by mason.nvim to path
 -- add luarocks and lua51 from lazy.nvim
 vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, vim.g.path_separator)
