@@ -3,7 +3,7 @@ return {
   settings = {
     basedpyright = {
       -- If use Ruff's import organizer, uncomment
-      -- disableOrganizeImports = true,
+      disableOrganizeImports = true,
       analysis = {
         -- If use ruff, uncomment
         -- ignore = { "*" },

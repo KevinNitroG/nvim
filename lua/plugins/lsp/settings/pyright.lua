@@ -12,7 +12,7 @@ return {
     },
     pyright = {
       -- If use Ruff's import organizer, uncomment
-      -- disableOrganizeImports = true,
+      disableOrganizeImports = true,
     },
   },
 }
