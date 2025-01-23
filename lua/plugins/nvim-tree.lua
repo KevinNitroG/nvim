@@ -47,12 +47,14 @@ return {
     on_attach = on_attach,
     diagnostics = {
       enable = true,
+      --[[
       icons = {
         hint = "󰌵",
         info = "",
         warning = "",
         error = "",
       },
+      ]]
     },
     filters = {
       enable = true,
@@ -130,6 +132,7 @@ return {
           git = true,
         },
 
+        --[[
         glyphs = {
           default = "󰈚",
           symlink = "",
@@ -154,6 +157,7 @@ return {
             ignored = "◌",
           },
         },
+        ]]
       },
     },
   },
