@@ -14,5 +14,6 @@ return {
   },
   {
     "luarocks/hererocks", -- For not being deleted. lazy.nvim will use it.
+    priority = 10000,
   },
 }
