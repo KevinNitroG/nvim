@@ -111,7 +111,7 @@ return {
         },
       },
       move = {
-        enable = true,
+        enable = false,
         set_jumps = true, -- whether to set jumps in the jumplist
         goto_next_start = {
           ["]m"] = "@function.outer",
