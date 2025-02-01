@@ -3,6 +3,7 @@
 > [!IMPORTANT]
 >
 > - Add git bin path to your env PATH (for luasnip build)
+> - Install luarocks on windows to use rest.nvim (luarocks new ver with lazy's lua 5.1 :v?)
 
 ---
 
