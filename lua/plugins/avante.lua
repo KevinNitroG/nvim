@@ -4,6 +4,8 @@
 return {
   "yetone/avante.nvim",
   enabled = true,
+  build = vim.g.os == "Windows" and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+    or "make",
   cmd = {
     "AvanteChat",
     "AvanteToggle",
