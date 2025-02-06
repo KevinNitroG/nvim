@@ -19,7 +19,7 @@ return {
     vim.keymap.set("v", "<leader>ar", "<cmd>AvanteRefresh<cr>", { desc = "Avante | Refresh", silent = true })
     vim.keymap.set({ "n", "v" }, "<leader>ae", "<cmd>AvanteEdit<cr>", { desc = "Avante | Edit", silent = true })
   end,
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
   opts = {
     -- add any opts here
