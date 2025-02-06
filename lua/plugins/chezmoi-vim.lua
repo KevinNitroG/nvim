@@ -1,4 +1,5 @@
 ---@type NvPluginSpec
+-- NOTE: Highlight dotfiles you manage with chezmoi.
 return {
   "alker0/chezmoi.vim",
   cond = vim.fn.executable "chezmoi" == 1,
