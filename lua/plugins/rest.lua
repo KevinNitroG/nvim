@@ -4,10 +4,13 @@ return {
   "rest-nvim/rest.nvim",
   name = "rest-nvim",
   dependencies = {
-    "nvim-telescope/telescope.nvim",
-    opts = {
-      extensions_list = { "rest" },
+    {
+      "nvim-telescope/telescope.nvim",
+      opts = {
+        extensions_list = { "rest" },
+      },
     },
+    "luarocks/hererocks",
   },
   keys = {
     { "<leader>AL", "<cmd>Rest log<cr>", desc = "Rest | Log", ft = "http", silent = true },
