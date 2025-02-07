@@ -11,7 +11,7 @@ local fts = {
 -- NOTE: Better Markdown
 return {
   "OXY2DEV/markview.nvim",
-  -- lazy = false, -- Recommended
+  lazy = false,
   ft = fts,
   dependencies = {
     -- You will not need this if you installed the
@@ -33,10 +33,9 @@ return {
     },
   },
   opts = {
-    filetypes = fts,
+    preview = {
+      icon_provider = "devicons", -- "mini" or "devicons"
+      filetypes = fts,
+    },
   },
-  config = function(_, opts)
-    require("markview").setup(opts)
-    -- vim.cmd "Markview disableAll"
-  end,
 }
