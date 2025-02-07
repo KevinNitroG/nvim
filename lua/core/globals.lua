@@ -25,6 +25,7 @@ local global = {
   os = os,
   path_delimiter = os == "Windows" and ";" or ":",
   path_separator = os == "Windows" and "\\" or "/",
+  inlayhint_default = true,
 }
 
 for name, value in pairs(global) do

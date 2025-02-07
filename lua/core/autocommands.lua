@@ -290,6 +290,18 @@ autocmd("FileType", {
   group = general,
 })
 
+autocmd("BufReadPre", {
+  desc = "Disable inlay hint file patterns",
+  pattern = {
+    "*/node_modules/*",
+    "*/.venv/*",
+  },
+  callback = function()
+    vim.lsp.inlay_hint.enable(false)
+  end,
+  group = general,
+})
+
 -- NOTE: Taken from LazyVim documentation: https://www.lazyvim.org/configuration/general#auto-commands
 
 local lazyvim = augroup("lazyvim", { clear = true })

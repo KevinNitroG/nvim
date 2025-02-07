@@ -69,7 +69,6 @@ for name, value in pairs(options) do
   vim.opt[name] = value
 end
 
--- Inlay hint by default
-if vim.fn.has "nvim-0.10" == 1 then
+if vim.g.inlayhint_default then
   vim.lsp.inlay_hint.enable(true)
 end
