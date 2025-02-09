@@ -112,10 +112,10 @@ vim.keymap.set("n", "<leader>ow", function()
 end, { desc = "Options | Toggle Wrap", silent = true })
 
 -- Better Down
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better Down", expr = true, silent = true })
+-- vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better Down", expr = true, silent = true })
 
 -- Better Up
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "General | Better Up", expr = true, silent = true })
+-- vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "General | Better Up", expr = true, silent = true })
 
 -- Go to upper window
 vim.keymap.set({ "n", "v" }, "<C-j>", "<C-w>j", { desc = "General | Go to upper window", silent = true })
@@ -240,10 +240,10 @@ vim.keymap.set("n", "<Down>", "<cmd>tabclose<CR>", { desc = "General | Close tab
 -- vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { desc = "General | Move the line down", silent = true })
 
 -- Better Down (Visual Mode)
-vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better Down", expr = true, silent = true })
+-- vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { desc = "General | Better Down", expr = true, silent = true })
 
 -- Better Up (Visual Mode)
-vim.keymap.set("v", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "General | Better Up", expr = true, silent = true })
+-- vim.keymap.set("v", "k", "v:count == 0 ? 'gk' : 'k'", { desc = "General | Better Up", expr = true, silent = true })
 
 -- Better Paste (Visual Mode)
 vim.keymap.set("v", "p", '"_dP', { desc = "General | Better Paste", silent = true })
