@@ -2,7 +2,7 @@
 -- NOTE: Scroll past the end of file just like scrolloff option
 return {
   "Aasim-A/scrollEOF.nvim",
-  cond = false,
+  enabled = false,
   event = {
     "CursorMoved",
     "WinScrolled",

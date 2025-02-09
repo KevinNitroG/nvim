@@ -3,7 +3,7 @@
 -- It doesn't recognise keymaps and autocmds defined by user
 return {
   "mrjones2014/legendary.nvim",
-  cond = false,
+  enabled = false,
   -- since legendary.nvim handles all your keymaps/commands,
   -- its recommended to load legendary.nvim before other plugins
   priority = 10000,

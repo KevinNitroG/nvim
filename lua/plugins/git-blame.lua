@@ -2,7 +2,7 @@
 -- NOTE: Git Blame
 return {
   "f-person/git-blame.nvim",
-  cond = false,
+  enabled = false,
   init = function()
     vim.keymap.set(
       "n",

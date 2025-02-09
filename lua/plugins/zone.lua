@@ -3,7 +3,7 @@
 -- But it's WIP
 return {
   "tamton-aquib/zone.nvim",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
   opts = {
     after = 60, -- Seconds

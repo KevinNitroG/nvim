@@ -2,7 +2,7 @@
 -- NOTE: Highlight dotfiles you manage with chezmoi.
 return {
   "alker0/chezmoi.vim",
-  cond = vim.fn.executable "chezmoi" == 1,
+  enabled = vim.fn.executable "chezmoi" == 1,
   lazy = false,
   init = function()
     -- This option is required.

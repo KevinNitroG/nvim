@@ -36,7 +36,7 @@ return {
   {
     "nvzone/menu",
     dependencies = { "nvzone/volt" },
-    cond = false,
+    enabled = false,
     event = "VeryLazy",
   },
   {

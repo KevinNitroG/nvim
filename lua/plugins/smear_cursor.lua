@@ -2,7 +2,7 @@
 -- NOTE: Neovim plugin to animate the cursor with a smear effect in all terminals
 return {
   "sphamba/smear-cursor.nvim",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
   opts = {
     -- Smear cursor when switching buffers or windows.

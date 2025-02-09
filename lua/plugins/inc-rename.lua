@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "smjonas/inc-rename.nvim",
-  cond = false,
+  enabled = false,
   cmd = {
     "IncRename",
   },

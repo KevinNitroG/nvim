@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "alohaia/fcitx.nvim",
-  cond = false and (vim.fn.executable "fcitx5" == 1 or vim.fn.executable "fcitx" == 1),
+  enabled = false and (vim.fn.executable "fcitx5" == 1 or vim.fn.executable "fcitx" == 1),
   event = "VeryLazy",
   opts = {},
   config = function(_, opts)

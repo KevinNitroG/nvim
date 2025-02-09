@@ -2,7 +2,7 @@
 -- NOTE: Decorate scrollbar for Neovim
 return {
   "lewis6991/satellite.nvim",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
   keys = {
     {

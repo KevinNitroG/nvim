@@ -2,7 +2,7 @@
 -- NOTE: A treesitter supported autopairing plugin with extensions, and much more
 return {
   "altermo/ultimate-autopair.nvim",
-  cond = false,
+  enabled = false,
   event = {
     "InsertEnter",
     "CmdlineEnter",

@@ -4,6 +4,6 @@
 -- "]o", "[o" is duplicate with treesitter
 return {
   "tpope/vim-unimpaired",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
 }

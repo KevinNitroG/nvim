@@ -2,7 +2,7 @@
 -- NOTE: Manage Projects
 return {
   "ahmedkhalf/project.nvim",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
   config = function(_, opts)
     require("project_nvim").setup(opts)

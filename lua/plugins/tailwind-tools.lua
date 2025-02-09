@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "luckasRanarison/tailwind-tools.nvim",
-  cond = false,
+  enabled = false,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

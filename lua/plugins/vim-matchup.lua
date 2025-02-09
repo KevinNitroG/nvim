@@ -3,7 +3,7 @@
 -- But it may conflict with selection in cmp
 return {
   "andymass/vim-matchup",
-  cond = false,
+  enabled = false,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     opts = {

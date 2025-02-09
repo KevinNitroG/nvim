@@ -170,7 +170,7 @@ M.mason = {
     -- Markdown
     "doctoc",
     "markdownlint",
-    "marksman",
+    -- "marksman",
     -- "vale_ls",
 
     -- Shell

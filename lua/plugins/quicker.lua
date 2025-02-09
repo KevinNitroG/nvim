@@ -2,7 +2,7 @@
 -- NOTE: Better QuickFixList
 return {
   "stevearc/quicker.nvim",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
   opts = {},
 }

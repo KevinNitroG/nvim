@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "pocco81/true-zen.nvim",
-  cond = false,
+  enabled = false,
   init = function()
     vim.keymap.set("n", "<leader>za", "<cmd>TZAtaraxis<cr>", { desc = "TrueZen | Toggle Ataraxis", silent = true })
     vim.keymap.set("n", "<leader>zm", "<cmd>TZMinimalist<cr>", { desc = "TrueZen | Toggle Minimalist", silent = true })

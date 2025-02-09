@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "razak17/tailwind-fold.nvim",
-  cond = false,
+  enabled = false,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

@@ -2,7 +2,7 @@
 -- NOTE: IDE-like breadcrumbs, out of the box
 return {
   "Bekaboo/dropbar.nvim",
-  cond = false,
+  enabled = false,
   event = "LspAttach",
   -- optional, but required for fuzzy finder support
   dependencies = {

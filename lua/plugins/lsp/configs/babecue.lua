@@ -2,7 +2,7 @@
 -- NOTE: Visual Studio Code inspired breadcrumbs plugin for the Neovim editor
 return {
   "utilyre/barbecue.nvim",
-  cond = false,
+  enabled = false,
   event = "VeryLazy",
   dependencies = {
     "SmiteshP/nvim-navic",
