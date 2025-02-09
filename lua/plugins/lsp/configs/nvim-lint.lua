@@ -3,7 +3,7 @@
 return {
   "mfussenegger/nvim-lint",
   event = "VeryLazy",
-  cond = true,
+  enabled = true,
   config = function()
     local linters = require("lint").linters
     vim.list_extend(linters.eslint.args, {

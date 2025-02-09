@@ -11,7 +11,6 @@ local fts = {
 -- NOTE: Preview Markdown
 return {
   "iamcco/markdown-preview.nvim",
-  cond = true,
   keys = {
     {
       "<leader>mp",
@@ -38,6 +37,7 @@ return {
   },
   build = ":call mkdp#util#install()",
   ft = fts,
+  enabled = true,
   init = function()
     vim.g.mkdp_open_to_the_world = 1 -- Open for other to access
     vim.g.mkdp_port = 65530

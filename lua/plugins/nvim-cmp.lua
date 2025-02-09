@@ -179,7 +179,7 @@ return {
     -- AI Autocomplete
     {
       "Exafunction/codeium.nvim",
-      cond = false,
+      enabled = false,
       opts = {
         enable_chat = true,
       },
