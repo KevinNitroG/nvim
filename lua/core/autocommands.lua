@@ -297,7 +297,8 @@ autocmd("BufReadPre", {
     "*/.venv/*",
   },
   callback = function()
-    vim.lsp.inlay_hint.enable(false)
+    local inlay_hint = vim.lsp.inlay_hint
+    inlay_hint.enable(false, inlay_hint.get { bufnr = 0 })
   end,
   group = general,
 })
