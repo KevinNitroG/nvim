@@ -368,6 +368,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     if neoscroll_ok then
       vim.cmd "NeoscrollEnableBufferPM"
     end
+    local inlay_hint = vim.lsp.inlay_hint
+    inlay_hint.enable(false, inlay_hint.get { bufnr = 0 })
     vim.schedule(function()
       vim.bo[ev.buf].syntax = vim.filetype.match { buf = ev.buf } or ""
     end)
