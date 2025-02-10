@@ -1,8 +1,8 @@
 ---@type NvPluginSpec
--- NOTE: Plugin Description
+-- NOTE: Chezmoi plugin for neovim
+-- For edit and apply
 return {
   "xvzc/chezmoi.nvim",
-  event = "VeryLazy",
   enabled = vim.fn.executable "chezmoi" == 1,
   init = function()
     vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -22,5 +22,4 @@ return {
       watch = true,
     },
   },
-  config = true,
 }
