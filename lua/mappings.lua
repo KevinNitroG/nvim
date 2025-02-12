@@ -2,7 +2,7 @@
 local fn = vim.fn
 local cwd = vim.fn.stdpath "config" .. "/"
 local config_dir = { cwd }
-local utils = require "core.utils"
+local code_runner = require "core.code_runner"
 
 -- Enter Command Mode
 vim.keymap.set("n", "<leader>;", ":", { desc = "General | Enter Command Mode", silent = true })
@@ -355,14 +355,39 @@ vim.keymap.set("n", "<leader>nv", function()
   return vim.notify(version, vim.log.levels.INFO, { title = "Neovim Version" })
 end, { desc = "Neovim | Version", silent = true })
 
--- Run Code
-vim.keymap.set("n", "<leader>nr", function()
-  utils.run_code()
-end, { desc = "Neovim | Run Code", silent = true })
-
 vim.keymap.set("n", "<leader>np", function()
   vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
+
+-- Term
+vim.keymap.set("n", "<leader>tr", function()
+  code_runner.run()
+end, { desc = "Terms | Run Code", silent = true })
+
+vim.keymap.set("n", "<leader>tf", function()
+  require("nvchad.term").toggle { pos = "float", id = "float" }
+end, { desc = "Terms | Float Terminal", silent = true })
+
+vim.keymap.set("n", "<leader>th", function()
+  require("nvchad.term").toggl { pos = "sp", id = "horizontal" }
+end, { desc = "Terms | Horizontal Terminal", silent = true })
+
+vim.keymap.set("n", "<leader>tv", function()
+  require("nvchad.term").toggle { pos = "vsp", id = "vertical" }
+end, { desc = "Terms | Vertical Terminal", silent = true })
+
+vim.keymap.set("n", "<leader>gg", function()
+  require("nvchad.term").toggle {
+    cmd = "lazygit",
+    pos = "float",
+    id = "lazygit",
+    float_opts = {
+      width = 0.9,
+      height = 0.9,
+      border = vim.g.border_enabled and "rounded" or "single",
+    },
+  }
+end, { desc = "Terms | Lazygit", silent = true })
 
 -- Clean
 vim.keymap.set("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = true })

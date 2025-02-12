@@ -221,7 +221,7 @@ M.base46 = {
     "trouble",
     "whichkey",
     "blankline",
-    "lspsaga", -- override NvChad's background in highlights.lua
+    "lspsaga",
   },
 }
 
@@ -230,6 +230,10 @@ M.colorify = {
   mode = "virtual", -- fg, bg, virtual
   virt_text = "󱓻 ",
   highlight = { hex = true, lspvars = true },
+}
+
+M.term = {
+  sizes = { sp = 0.4 },
 }
 
 -- M.lazy_nvim = require "core.lazy" -- config for lazy.nvim startup options

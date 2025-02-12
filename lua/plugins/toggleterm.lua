@@ -2,6 +2,7 @@
 -- NOTE: Terminal Integration
 return {
   "akinsho/toggleterm.nvim",
+  enabled = false,
   init = function()
     local utils = require "core.utils"
     vim.keymap.set(
