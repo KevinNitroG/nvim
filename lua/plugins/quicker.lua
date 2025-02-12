@@ -3,6 +3,9 @@
 return {
   "stevearc/quicker.nvim",
   enabled = false,
-  event = "VeryLazy",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   opts = {},
 }

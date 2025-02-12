@@ -2,7 +2,10 @@
 -- NOTE: Show Better Diagnostic Inline
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
-  event = "VeryLazy",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   opts = {
     overflow = {
       mode = "oneline", -- wrap, none, oneline

@@ -3,7 +3,6 @@
 -- For further information: https://github.com/typescript-language-server/typescript-language-server/blob/HEAD/docs/configuration.md
 return {
   "pmizio/typescript-tools.nvim",
-  event = "VeryLazy",
   init = function()
     -- NOTE: Rather let Prettier or Eslint do this
     --
@@ -17,6 +16,10 @@ return {
     --   command = ":TSToolsSortImports sync",
     -- })
   end,
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
   opts = {
     on_attach = function(client, bufnr)
       client.server_capabilities.documentFormattingProvider = false
