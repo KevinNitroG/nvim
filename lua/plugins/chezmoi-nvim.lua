@@ -10,7 +10,7 @@ return {
     }
 
     vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-      pattern = { os.getenv "HOME" .. "/.local/share/chezmoi/*" },
+      pattern = { os.getenv "HOME" .. "/.local/share/chezmoi/home/*" },
       callback = function(args)
         local bufnr = args.buf
         local file_path = vim.fn.expand("%:p", bufnr)
