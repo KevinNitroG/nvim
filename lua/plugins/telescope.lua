@@ -1,3 +1,7 @@
+local global_fdignore = vim.fn.getenv "HOME" .. ".fdignore"
+local fdignore = vim.fn.filereadable(global_fdignore) == 1 and global_fdignore
+  or (vim.fn.stdpath "config" .. "/.config/fd/ignore")
+
 ---@type NvPluginSpec
 -- NOTE: Fuzzy Finder
 return {
@@ -105,10 +109,9 @@ return {
           "--color",
           "never",
           "--hidden",
-          "--no-ignore",
           "--follow",
-          "--exclude",
-          "**/{.git,node_modules,dist,build,.husky/_,__pycache__,*.egg-info,.venv*,.idea,.vs,*cache*,*debug*,*bin*,*obj*}/**",
+          "--no-ignore",
+          "--ignore-file=" .. fdignore,
         },
       }
     end, { desc = "Telescope | All Files", silent = true })

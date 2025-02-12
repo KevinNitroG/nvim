@@ -4,12 +4,7 @@ return {
   "rest-nvim/rest.nvim",
   name = "rest-nvim",
   dependencies = {
-    {
-      "nvim-telescope/telescope.nvim",
-      opts = {
-        extensions_list = { "rest" },
-      },
-    },
+    "nvim-telescope/telescope.nvim",
     "luarocks/hererocks",
   },
   keys = {
@@ -20,5 +15,8 @@ return {
     { "<leader>Ar", "<cmd>Rest run<cr>", desc = "Rest | Run", ft = "http", silent = true },
     { "<leader>AR", "<cmd>Rest result<cr>", desc = "Rest | Result", ft = "http", silent = true },
   },
+  -- init = function()
+  --   require("telescope").load_extension "rest"
+  -- end,
   config = true,
 }
