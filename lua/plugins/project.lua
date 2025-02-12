@@ -3,8 +3,15 @@
 return {
   "ahmedkhalf/project.nvim",
   event = "VeryLazy",
-  config = function(_, opts)
-    require("project_nvim").setup(opts)
+  config = function(
+    _,
+    opts
+  )
+    require(
+      "project_nvim"
+    ).setup(
+      opts
+    )
   end,
   opts = {
     -- Manual mode doesn't automatically change your root directory, so you have
@@ -15,7 +22,10 @@ return {
     -- lsp, while **"pattern"** uses vim-rooter like glob pattern matching. Here
     -- order matters: if one is not detected, the other is used as fallback. You
     -- can also delete or rearangne the detection methods.
-    detection_methods = { "pattern", "lsp" },
+    detection_methods = {
+      "pattern",
+      "lsp",
+    },
 
     -- All the patterns used to detect root dir, when **"pattern"** is in
     -- detection_methods

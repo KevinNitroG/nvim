@@ -7,14 +7,25 @@ return {
     "BufNewFile",
   },
   init = function()
-    vim.o.foldcolumn = "1"
-    vim.o.foldlevel = 99
-    vim.o.foldlevelstart = 99
-    vim.o.foldenable = true
+    vim.o.foldcolumn =
+      "1"
+    vim.o.foldlevel =
+      99
+    vim.o.foldlevelstart =
+      99
+    vim.o.foldenable =
+      true
   end,
   opts = {
-    provider_selector = function(_, _, _)
-      return { "treesitter", "indent" }
+    provider_selector = function(
+      _,
+      _,
+      _
+    )
+      return {
+        "treesitter",
+        "indent",
+      }
     end,
   },
   dependencies = {
@@ -22,14 +33,35 @@ return {
     {
       "luukvbaal/statuscol.nvim",
       config = function()
-        local builtin = require "statuscol.builtin"
-        require("statuscol").setup {
+        local builtin =
+          require "statuscol.builtin"
+        require(
+          "statuscol"
+        ).setup {
           relculright = true,
           segments = {
-            { text = { builtin.foldfunc, "  " }, click = "v:lua.ScFa" },
+            {
+              text = {
+                builtin.foldfunc,
+                "  ",
+              },
+              click = "v:lua.ScFa",
+            },
             -- { sign = { namespace = { "diagnostic" } } },
-            { text = { " ", builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-            { text = { "%s" }, click = "v:lua.ScSa" },
+            {
+              text = {
+                " ",
+                builtin.lnumfunc,
+                " ",
+              },
+              click = "v:lua.ScLa",
+            },
+            {
+              text = {
+                "%s",
+              },
+              click = "v:lua.ScSa",
+            },
             -- {
             --   sign = {
             --     name = { "GitSigns*" },

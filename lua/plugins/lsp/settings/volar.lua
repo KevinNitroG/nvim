@@ -5,7 +5,8 @@ return {
         hybridMode = true,
       },
       typescript = {
-        tsdk = vim.fn.stdpath "data" .. "/mason/packages/vue-language-server/node_modules/typescript/lib",
+        tsdk = vim.fn.stdpath "data"
+          .. "/mason/packages/vue-language-server/node_modules/typescript/lib",
       },
     },
     languageFeatures = {

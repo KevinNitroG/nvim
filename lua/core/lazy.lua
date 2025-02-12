@@ -1,20 +1,31 @@
 -- NOTE: lazy.nvim(Plugin Manager) options
 return {
-  defaults = { lazy = true },
-  install = { colorscheme = { "nvchad" } },
+  defaults = {
+    lazy = true,
+  },
+  install = {
+    colorscheme = {
+      "nvchad",
+    },
+  },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = {
+    enabled = true,
+  },
   change_detection = {
     -- automatically check for config file changes and reload the ui
     enabled = true,
     notify = false, -- get a notification when changes are found
   },
-  lockfile = vim.fn.stdpath "data" .. "/lazy-lock.json",
+  lockfile = vim.fn.stdpath "data"
+    .. "/lazy-lock.json",
   diff = {
     cmd = "diffview.nvim",
   },
   ui = {
-    border = vim.g.border_enabled and "rounded" or "none",
+    border = vim.g.border_enabled
+        and "rounded"
+      or "none",
     icons = {
       ft = "",
       lazy = "󰂠 ",

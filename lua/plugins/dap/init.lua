@@ -1,3 +1,5 @@
 return {
-  { import = "plugins.dap" },
+  {
+    import = "plugins.dap",
+  },
 }

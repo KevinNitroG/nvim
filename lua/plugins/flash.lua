@@ -29,9 +29,13 @@ return {
         "notify",
         "noice",
         "cmp_menu",
-        function(win)
+        function(
+          win
+        )
           -- exclude non-focusable windows
-          return not vim.api.nvim_win_get_config(win).focusable
+          return not vim.api.nvim_win_get_config(
+            win
+          ).focusable
         end,
       },
       -- Optional trigger character that needs to be typed before
@@ -58,8 +62,14 @@ return {
       -- a regular search with `/` or `?`
       search = {
         enabled = true, -- enable flash for search
-        highlight = { backdrop = false },
-        jump = { history = true, register = true, nohlsearch = true },
+        highlight = {
+          backdrop = false,
+        },
+        jump = {
+          history = true,
+          register = true,
+          nohlsearch = true,
+        },
         search = {
           -- `forward` will be automatically set to the search direction
           -- `mode` is always set to `search`
@@ -72,10 +82,23 @@ return {
         enabled = true,
         -- by default all keymaps are enabled, but you can disable some of them,
         -- by removing them from the list.
-        keys = { "f", "F", "t", "T", ",", ";" },
-        search = { wrap = false },
-        highlight = { backdrop = true },
-        jump = { register = false },
+        keys = {
+          "f",
+          "F",
+          "t",
+          "T",
+          ",",
+          ";",
+        },
+        search = {
+          wrap = false,
+        },
+        highlight = {
+          backdrop = true,
+        },
+        jump = {
+          register = false,
+        },
         jump_labels = true,
       },
       -- options used for remote flash

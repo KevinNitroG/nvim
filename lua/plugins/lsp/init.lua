@@ -1,3 +1,5 @@
 return {
-  { import = "plugins.lsp.configs" },
+  {
+    import = "plugins.lsp.configs",
+  },
 }

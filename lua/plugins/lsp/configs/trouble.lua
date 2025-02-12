@@ -8,13 +8,19 @@ return {
       "n",
       "<leader>lb",
       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      { desc = "Trouble | Buffer Diagnostics", silent = true }
+      {
+        desc = "Trouble | Buffer Diagnostics",
+        silent = true,
+      }
     )
     vim.keymap.set(
       "n",
       "<leader>lw",
       "<cmd>Trouble diagnostics toggle<cr>",
-      { desc = "Trouble | Workspace Diagnostics", silent = true }
+      {
+        desc = "Trouble | Workspace Diagnostics",
+        silent = true,
+      }
     )
   end,
   opts = {

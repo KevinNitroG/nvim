@@ -4,11 +4,17 @@ return {
       semantic = {
         enable = false,
       },
-      hint = { enable = true },
-      diagnostics = {
-        globals = { "vim" },
+      hint = {
+        enable = true,
       },
-      telemetry = { enable = false },
+      diagnostics = {
+        globals = {
+          "vim",
+        },
+      },
+      telemetry = {
+        enable = false,
+      },
       workspace = {
         checkThirdParty = false,
         maxPreload = 100000,

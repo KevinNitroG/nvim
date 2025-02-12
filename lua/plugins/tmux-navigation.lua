@@ -2,8 +2,12 @@
 -- NOTE: Tmux navigation
 return {
   "alexghergh/nvim-tmux-navigation",
-  enabled = vim.fn.executable "tmux" == 1,
-  event = vim.env.TMUX ~= nil and "VeryLazy" or nil,
+  enabled = vim.fn.executable "tmux"
+    == 1,
+  event = vim.env.TMUX
+        ~= nil
+      and "VeryLazy"
+    or nil,
   opts = {
     keybindings = {
       left = "<C-h>",

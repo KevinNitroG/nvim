@@ -3,31 +3,49 @@
 return {
   "akinsho/toggleterm.nvim",
   init = function()
-    local utils = require "core.utils"
+    local utils =
+      require "core.utils"
     vim.keymap.set(
       "n",
       "<leader>tf",
       "<cmd>ToggleTerm direction=float<cr>",
-      { desc = "ToggleTerm | Float Terminal", silent = true }
+      {
+        desc = "ToggleTerm | Float Terminal",
+        silent = true,
+      }
     )
 
     vim.keymap.set(
       "n",
       "<leader>th",
       "<cmd>ToggleTerm direction=horizontal<cr>",
-      { desc = "ToggleTerm | Horizontal Terminal", silent = true }
+      {
+        desc = "ToggleTerm | Horizontal Terminal",
+        silent = true,
+      }
     )
 
     vim.keymap.set(
       "n",
       "<leader>tv",
       "<cmd>ToggleTerm direction=vertical<cr>",
-      { desc = "ToggleTerm | Vertical Terminal", silent = true }
+      {
+        desc = "ToggleTerm | Vertical Terminal",
+        silent = true,
+      }
     )
 
-    vim.keymap.set("n", "<leader>gg", function()
-      utils.git()
-    end, { desc = "ToggleTerm | Lazygit", silent = true })
+    vim.keymap.set(
+      "n",
+      "<leader>gg",
+      function()
+        utils.git()
+      end,
+      {
+        desc = "ToggleTerm | Lazygit",
+        silent = true,
+      }
+    )
   end,
   cmd = {
     "ToggleTerm",
@@ -36,11 +54,21 @@ return {
     "ToggleTermSendVisualSelection",
   },
   opts = {
-    size = function(term)
-      if term.direction == "horizontal" then
-        return vim.o.lines * 0.4
-      elseif term.direction == "vertical" then
-        return vim.o.columns * 0.5
+    size = function(
+      term
+    )
+      if
+        term.direction
+        == "horizontal"
+      then
+        return vim.o.lines
+          * 0.4
+      elseif
+        term.direction
+        == "vertical"
+      then
+        return vim.o.columns
+          * 0.5
       end
     end,
     open_mapping = [[<c-\>]],
@@ -62,8 +90,15 @@ return {
     },
     float_opts = {
       border = "rounded",
-      height = math.ceil(vim.o.lines * 1.0 - 4),
-      width = math.ceil(vim.o.columns * 1.0),
+      height = math.ceil(
+        vim.o.lines
+            * 1.0
+          - 4
+      ),
+      width = math.ceil(
+        vim.o.columns
+          * 1.0
+      ),
       winblend = 0,
     },
   },

@@ -7,10 +7,20 @@ return {
     "BufNewFile",
   },
   opts = {
-    on_attach = function(client, bufnr)
-      client.server_capabilities.documentFormattingProvider = false
-      client.server_capabilities.documentRangeFormattingProvider = false
-      require("plugins.lsp.opts").on_attach(client, bufnr)
+    on_attach = function(
+      client,
+      bufnr
+    )
+      client.server_capabilities.documentFormattingProvider =
+        false
+      client.server_capabilities.documentRangeFormattingProvider =
+        false
+      require(
+        "plugins.lsp.opts"
+      ).on_attach(
+        client,
+        bufnr
+      )
     end,
     settings = {
       separate_diagnostic_server = false, -- Disable separate diagnostic server

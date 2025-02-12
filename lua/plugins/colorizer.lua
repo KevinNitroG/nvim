@@ -19,7 +19,12 @@ return {
       -- Available methods are false / true / "normal" / "lsp" / "both"
       -- True is same as normal
       tailwind = true,
-      sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
+      sass = {
+        enable = true,
+        parsers = {
+          "css",
+        },
+      }, -- Enable sass colors
       always_update = true,
     },
     filetypes = {
@@ -33,11 +38,21 @@ return {
         css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
         css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
       },
-      html = { mode = "background" },
-      markdown = { names = false },
-      lua = { names = false },
-      json = { names = false },
-      mason = { names = false },
+      html = {
+        mode = "background",
+      },
+      markdown = {
+        names = false,
+      },
+      lua = {
+        names = false,
+      },
+      json = {
+        names = false,
+      },
+      mason = {
+        names = false,
+      },
       "*",
     },
   },

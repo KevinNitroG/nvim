@@ -1,42 +1,90 @@
 require "core.globals"
 require "core.env"
 
-if vim.version().minor >= 11 then
-  vim.tbl_add_reverse_lookup = function(tbl)
-    for k, v in pairs(tbl) do
-      tbl[v] = k
+if
+  vim.version().minor
+  >= 11
+then
+  vim.tbl_add_reverse_lookup = function(
+    tbl
+  )
+    for
+      k,
+      v
+    in
+      pairs(
+        tbl
+      )
+    do
+      tbl[v] =
+        k
     end
   end
 end
 
 -- bootstrap lazy and all plugins
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data"
+  .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
-  local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+if
+  not vim.loop.fs_stat(
+    lazypath
+  )
+then
+  local repo =
+    "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system {
+    "git",
+    "clone",
+    "--filter=blob:none",
+    repo,
+    "--branch=stable",
+    lazypath,
+  }
 end
 
-vim.opt.runtimepath:prepend(lazypath)
+vim.opt.runtimepath:prepend(
+  lazypath
+)
 
 -- NOTE: lazy.nvim options
-local lazy_config = require "core.lazy"
+local lazy_config =
+  require "core.lazy"
 
 -- NOTE: Load plugins
-require("lazy").setup({
+require(
+  "lazy"
+).setup(
   {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-  },
+    {
+      "NvChad/NvChad",
+      lazy = false,
+      branch = "v2.5",
+      import = "nvchad.plugins",
+    },
 
-  { import = "plugins" },
-}, lazy_config)
+    {
+      import = "plugins",
+    },
+  },
+  lazy_config
+)
 
 -- Load the highlights
-for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
-  dofile(vim.g.base46_cache .. v)
+for
+  _,
+  v
+in
+  ipairs(
+    vim.fn.readdir(
+      vim.g.base46_cache
+    )
+  )
+do
+  dofile(
+    vim.g.base46_cache
+      .. v
+  )
 end
 
 require "options"

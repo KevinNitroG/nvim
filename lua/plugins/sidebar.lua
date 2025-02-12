@@ -17,16 +17,29 @@ return {
     initial_width = 32,
     hide_statusline = false,
     update_interval = 100,
-    sections = { "git", "containers" },
-    section_separator = { "", "-----", "" },
-    section_title_separator = { "" },
+    sections = {
+      "git",
+      "containers",
+    },
+    section_separator = {
+      "",
+      "-----",
+      "",
+    },
+    section_title_separator = {
+      "",
+    },
     containers = {
       attach_shell = "/bin/sh",
       show_all = true,
       interval = 5000,
     },
     -- datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
-    todos = { ignored_paths = { "~" } },
+    todos = {
+      ignored_paths = {
+        "~",
+      },
+    },
     ["git"] = {
       icon = "",
     },

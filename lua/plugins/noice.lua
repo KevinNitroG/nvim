@@ -3,7 +3,14 @@
 return {
   "folke/noice.nvim",
   lazy = false,
-  dependencies = { { "MunifTanjim/nui.nvim" }, { "rcarriga/nvim-notify" } },
+  dependencies = {
+    {
+      "MunifTanjim/nui.nvim",
+    },
+    {
+      "rcarriga/nvim-notify",
+    },
+  },
   opts = {
     cmdline = {
       enabled = true, -- enables the Noice cmdline UI
@@ -15,12 +22,41 @@ return {
         -- opts: any options passed to the view
         -- icon_hl_group: optional hl_group for the icon
         -- title: set to anything or empty string to hide
-        cmdline = { pattern = "^:", icon = "", lang = "vim" },
-        search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-        search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
-        filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
-        lua = { pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" }, icon = "", lang = "lua" },
-        help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+        cmdline = {
+          pattern = "^:",
+          icon = "",
+          lang = "vim",
+        },
+        search_down = {
+          kind = "search",
+          pattern = "^/",
+          icon = " ",
+          lang = "regex",
+        },
+        search_up = {
+          kind = "search",
+          pattern = "^%?",
+          icon = " ",
+          lang = "regex",
+        },
+        filter = {
+          pattern = "^:%s*!",
+          icon = "$",
+          lang = "bash",
+        },
+        lua = {
+          pattern = {
+            "^:%s*lua%s+",
+            "^:%s*lua%s*=%s*",
+            "^:%s*=%s*",
+          },
+          icon = "",
+          lang = "lua",
+        },
+        help = {
+          pattern = "^:%s*he?l?p?%s+",
+          icon = "",
+        },
         input = {}, -- Used by input()
         -- lua = false, -- to disable a format, set to `false`
       },
@@ -28,7 +64,9 @@ return {
     routes = {
       {
         view = "notify",
-        filter = { event = "msg_showmode" },
+        filter = {
+          event = "msg_showmode",
+        },
       },
       {
         filter = {
@@ -36,7 +74,9 @@ return {
           kind = "",
           find = "written",
         },
-        opts = { skip = true },
+        opts = {
+          skip = true,
+        },
       },
     },
     lsp = {
@@ -46,7 +86,8 @@ return {
         -- See the section on formatting for more details on how to customize.
         format = "lsp_progress",
         format_done = "lsp_progress_done",
-        throttle = 1000 / 30, -- frequency to update lsp progress message
+        throttle = 1000
+          / 30, -- frequency to update lsp progress message
         view = "mini",
       },
       override = {
@@ -87,8 +128,13 @@ return {
           lang = "markdown",
           replace = true,
           render = "plain",
-          format = { "{message}" },
-          win_options = { concealcursor = "n", conceallevel = 3 },
+          format = {
+            "{message}",
+          },
+          win_options = {
+            concealcursor = "n",
+            conceallevel = 3,
+          },
         },
       },
     },
