@@ -18,7 +18,7 @@ return {
         column = 200, -- Maximum delta for column movements
         time = 5000,
       },
-      mode = "cursor", ---@type "cursor" | "window"
+      mode = "window", ---@type "cursor" | "window"
     },
   },
 }
