@@ -11,7 +11,12 @@ return {
   opts = {
     border = vim.g.border_enabled and "rounded" or "none",
     lsp = {
-      virtual_text_str = "󱓻 ",
+      on_attach = function(client, bufnr)
+        require("plugins.lsp.opts").on_attach(client, bufnr)
+      end,
+      capabilities = function()
+        return require("plugins.lsp.opts").capabilities
+      end,
     },
     setting = {
       analysisExcludedFolders = {
