@@ -100,6 +100,7 @@ return {
   end,
   opts = function(_, opts)
     table.insert(opts.sources, 1, { name = "copilot" })
+    table.insert(opts.sources, 3, { name = "emoji" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
     -- table.insert(opts.sources, 3, { name = "cmp_yanky" })
@@ -208,5 +209,8 @@ return {
     -- {
     --   "chrisgrieser/cmp_yanky",
     -- },
+    {
+      "hrsh7th/cmp-emoji",
+    },
   },
 }
