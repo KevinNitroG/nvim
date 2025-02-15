@@ -176,7 +176,7 @@ M.mason = {
     -- Shell
     "bash-language-server",
     "beautysh",
-    "powershell-editor-services",
+    -- "powershell-editor-services",
     "shellcheck",
     "shfmt",
 
