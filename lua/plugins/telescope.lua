@@ -159,7 +159,7 @@ return {
         },
       },
     },
-    extensions_list = { "themes", "terms", "fzf", "projects" },
+    extensions_list = { "themes", "terms", "fzf", "projects", "flutter" },
     defaults = {
       path_display = { "smart" },
       mappings = {
