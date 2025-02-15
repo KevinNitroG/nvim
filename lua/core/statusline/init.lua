@@ -263,6 +263,14 @@ M.modules = {
       return " %#St_gitIcons# " .. (vim.o.columns > 100 and table.concat(clients, ", ") or "") .. " "
     end
   end,
+
+  flutter = function()
+    if vim.g.flutter_tools_decorations and vim.g.flutter_tools_decorations.app_version then
+      return "%#St_gitIcons# " .. (vim.o.columns > 100 and vim.g.flutter_tools_decorations.app_version or "") .. " "
+    else
+      return ""
+    end
+  end,
 }
 
 return M

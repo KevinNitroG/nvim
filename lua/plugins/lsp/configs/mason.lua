@@ -47,6 +47,7 @@ return {
         "rust_analyzer",
         "ts_ls",
         "ruff",
+        "dartls",
       }
 
       mason_lspconfig.setup_handlers {
