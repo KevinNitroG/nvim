@@ -98,6 +98,7 @@ return {
         -- "javascript", -- some wrong indentation when using `o`
         -- "typescript",
         "yaml", -- wrong indentation in list continuation
+        "dart", -- dart delay: https://github.com/NvChad/NvChad/issues/2237#issuecomment-1653019941
       },
     },
     textobjects = {
@@ -151,6 +152,9 @@ return {
 
       select = {
         enable = true,
+        disable = {
+          "dart",
+        },
 
         -- Automatically jump forward to textobj, similar to targets.vim
         lookahead = true,
