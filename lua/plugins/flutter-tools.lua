@@ -10,7 +10,7 @@ return {
     {
       "nvim-telescope/telescope.nvim",
       opts = function(_, opts)
-        table.insert(opts.extensions_list, "flutter")
+        opts.extensions_list = vim.list_extend(opts.extensions_list or {}, { "flutter" })
       end,
     },
   },
