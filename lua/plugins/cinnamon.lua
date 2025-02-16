@@ -6,6 +6,15 @@ return {
     "BufReadPost",
     "BufNewFile",
   },
+  init = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = { "NvimTree" },
+      callback = function()
+        vim.b.cinnamon_disable = true
+      end,
+      desc = "Disable Cinnamon in NvimTree",
+    })
+  end,
   opts = {
     keymaps = {
       basic = true, -- Enable the basic keymaps
