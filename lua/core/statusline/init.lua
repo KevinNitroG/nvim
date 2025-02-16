@@ -42,6 +42,7 @@ M.modules = {
   --     .. removed
   -- end,
 
+  --[[
   total_lines = function()
     local separators = {}
     local config = require("nvconfig").ui.statusline
@@ -91,6 +92,58 @@ M.modules = {
       return "%#StText# %L"
     end
     return gen_block("", "%L", "%#St_Pos_sep#", "%#St_Pos_bg#", "%#St_Pos_txt#")
+  end,
+  ]]
+
+  total_lines = function()
+    local separators = {}
+    local config = require("nvconfig").ui.statusline
+    local theme = config.theme
+    local sep_style = config.separator_style
+
+    local mode = {
+      default = {
+        default = { left = "", right = "" },
+        round = { left = "", right = "" },
+        block = { left = "█", right = "█" },
+        arrow = { left = "", right = "" },
+      },
+      minimal = {
+        default = { left = "█", right = "█" },
+        round = { left = "", right = "" },
+        block = { left = "█", right = "█" },
+        arrow = { left = "█", right = "█" },
+      },
+      vscode = {
+        default = { left = "█", right = "█" },
+        round = { left = "", right = "" },
+        block = { left = "█", right = "█" },
+        arrow = { left = "", right = "" },
+      },
+      vscode_colored = {
+        default = { left = "█", right = "█" },
+        round = { left = "", right = "" },
+        block = { left = "█", right = "█" },
+        arrow = { left = "", right = "" },
+      },
+    }
+
+    separators = (type(sep_style) == "table" and sep_style) or mode[theme][sep_style]
+
+    local sep_l = separators["left"]
+    local sep_end = "%#St_sep_r#" .. separators["right"]
+
+    -- From: NvChad/ui
+    local function gen_block(icon, txt, sep_l_hlgroup, iconHl_group, txt_hl_group)
+      return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_end
+    end
+
+    if theme == "default" then
+      return "%#St_Percent_sep#" .. sep_l .. "%#St_Percent_icon#󰗈 %#St_Percent_text# %p %% "
+    elseif theme == "vscode" or theme == "vscode_colored" then
+      return "%#StText# %L"
+    end
+    return gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#")
   end,
 
   harpoon = function()

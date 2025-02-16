@@ -51,6 +51,11 @@ M.add = {
 
   -- Colorful-Winsep
   NvimSeparator = { fg = "orange" },
+
+  -- For statusline
+  St_Percent_icon = { fg = "black", bg = "blue" },
+  St_Percent_sep = { fg = "blue", bg = "lightbg" },
+  St_Percent_text = { link = "St_percent_sep" },
 }
 
 return M

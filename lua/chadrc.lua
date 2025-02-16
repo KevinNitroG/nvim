@@ -58,7 +58,7 @@ M.ui = {
       "eol_char",
       "cwd",
       "cursor",
-      -- "total_lines",
+      "total_lines",
     },
     modules = require("core.statusline").modules,
   },
