@@ -9,16 +9,20 @@ return {
   cmd = "LoremIpsum",
   init = function()
     vim.keymap.set("n", "<leader>ul", function()
-      vim.ui.input({ prompt = "Enter number of word(s) / paragraph(s)" }, function(number)
-        number = number ~= nil and number or ""
-        vim.ui.select({ "words", "paragraphs" }, {
-          prompt = "Select Lorem scheme",
-          telescope = require("telescope.themes").get_dropdown(),
-        }, function(scheme)
-          if scheme == nil then
+      vim.ui.select({ "words", "paragraphs" }, {
+        prompt = "Select Lorem scheme",
+        telescope = require("telescope.themes").get_dropdown(),
+      }, function(scheme)
+        if not scheme then
+          return
+        end
+
+        vim.ui.input({ prompt = "Enter number of " .. scheme .. "(s)" }, function(number)
+          if not number then
             return
           end
-          vim.cmd("LoremIpsum " .. number .. " " .. scheme)
+
+          vim.cmd("LoremIpsum " .. scheme .. " " .. number)
         end)
       end)
     end, { desc = "Lorem | Generate", silent = true })
@@ -29,6 +33,6 @@ return {
     max_commas_per_sentence = 2,
   },
   config = function(_, opts)
-    require("lorem").setup(opts)
+    require("lorem").opts(opts)
   end,
 }
