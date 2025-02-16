@@ -296,8 +296,8 @@ vim.keymap.set("c", "<S-Tab>", function()
 end, { desc = "General | Word Search Decrement", expr = true })
 
 -- Override default x keybind to delete without put into default register
-vim.keymap.set("n", "X", '"_dd', { desc = "General | Delete Line to Void Register", silent = true })
-vim.keymap.set("v", "x", '"_d', { desc = "General | Delete Selected to Void Register", silent = true })
+-- vim.keymap.set("n", "X", '"_dd', { desc = "General | Delete Line to Void Register", silent = true })
+-- vim.keymap.set("v", "x", '"_d', { desc = "General | Delete Selected to Void Register", silent = true })
 
 -- Disable Default "s" Keymap In Neovim and Replace with custom Windows & TS Swap
 vim.keymap.set("n", "s", "<nop>", { desc = "Windows, Buffer, TS Swap", silent = true, remap = true })
@@ -448,3 +448,18 @@ vim.keymap.set("n", "<leader>ux", function()
     vim.cmd("!chmod +x " .. filename)
   end)
 end, { desc = "Utils | Add Executable Permission", silent = true })
+
+-- Access register with leader
+vim.keymap.set(
+  { "n", "v", "x", "o" },
+  "<leader>1",
+  '"+',
+  { desc = "General | Enter System Clipboard (+) Register", silent = true }
+)
+vim.keymap.set(
+  { "n", "v", "x", "o" },
+  "<leader>2",
+  '"*',
+  { desc = "General | Enter Selection Clipboard (*) Register", silent = true }
+)
+vim.keymap.set({ "n", "v", "x", "o" }, "<leader>0", '"_', { desc = "General | Enter Void Register", silent = true })
