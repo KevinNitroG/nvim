@@ -7,6 +7,12 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "stevearc/dressing.nvim", -- optional for vim.ui.select
+    {
+      "nvim-telescope/telescope.nvim",
+      opts = function(_, opts)
+        table.insert(opts.extensions_list, "flutter")
+      end,
+    },
   },
   opts = {
     border = vim.g.border_enabled and "rounded" or "none",
