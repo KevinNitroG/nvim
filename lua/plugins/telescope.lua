@@ -1,6 +1,19 @@
-local global_fdignore = vim.fn.getenv "HOME" .. ".fdignore"
-local fdignore = vim.fn.filereadable(global_fdignore) == 1 and global_fdignore
-  or (vim.fn.stdpath "config" .. "/.config/fd/ignore")
+-- Gonna search for all file including files ignored by git and global ignore, just excluded in fdignore
+local get_fd_ignore = function()
+  local at_home = vim.fn.getenv "HOME" .. "/.fdignore"
+  local at_config = vim.g.is_windows and vim.fn.getenv "APPDATA" .. "/fd/ignore"
+    or vim.fn.getenv "HOME" .. "/.config/fd/ignore"
+  if vim.fn.filereadable(at_home) == 1 then
+    return at_home
+  else
+    if vim.fn.filereadable(at_config) == 1 then
+      return at_config
+    else
+      return (vim.fn.stdpath "config" .. "/.config/fd/ignore")
+    end
+  end
+end
+local fdignore = get_fd_ignore()
 
 ---@type NvPluginSpec
 -- NOTE: Fuzzy Finder
@@ -96,9 +109,11 @@ return {
     vim.keymap.set(
       "n",
       "<leader>gc",
-      "<cmd>telescope git_commits<cr>",
+      "<cmd>Telescope git_commits<cr>",
       { desc = "telescope | checkout commit", silent = true }
     )
+
+    vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "telescope | Git Files", silent = true })
 
     vim.keymap.set("n", "<leader><leader>", function()
       require("telescope.builtin").find_files {
