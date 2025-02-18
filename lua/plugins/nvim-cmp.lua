@@ -103,7 +103,6 @@ return {
     table.insert(opts.sources, 3, { name = "emoji" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
-    -- table.insert(opts.sources, 3, { name = "cmp_yanky" })
 
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
@@ -205,10 +204,6 @@ return {
       build = vim.g.os == "Windows" and "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c"
         or "make install_jsregexp",
     },
-    -- Yanky integration
-    -- {
-    --   "chrisgrieser/cmp_yanky",
-    -- },
     {
       "hrsh7th/cmp-emoji",
     },

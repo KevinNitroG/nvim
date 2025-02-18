@@ -26,10 +26,11 @@ return {
     require("which-key").setup(opts)
     require("which-key").add {
       {
-        -- { "<leader>P", group = "Yanky", icon = "", mode = { "n", "x" } },
         { "<leader><C-d>", group = "Database", icon = "" },
+        { "<leader><C-r>", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
         { "<leader>A", group = "API", icon = "󱂛" },
         { "<leader>T", group = "Tests", icon = "󰙨" },
+        { "<leader>Y", group = "Yanky", icon = "", mode = { "n", "x" } },
         { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
         { "<leader>d", group = "Debugging", icon = "" },
         { "<leader>f", group = "Find", icon = "" },
@@ -45,7 +46,6 @@ return {
         { "<leader>s", group = "Snapshot", icon = "", mode = { "x" } },
         { "<leader>t", group = "Terminal", icon = "" },
         { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
-        { "<leader><C-r>", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
         { "<leader>v", group = "Venv", icon = "" },
         { "<leader>z", group = "Zen", icon = "󰡌" },
         { "sc", group = "Close Buffers From" },

@@ -1,22 +1,30 @@
 return {
   "gbprod/yanky.nvim",
-  enabled = false,
+  enabled = true,
   dependencies = {
-    "kkharji/sqlite.lua",
+    -- "kkharji/sqlite.lua",
     "nvim-telescope/telescope.nvim",
   },
   event = "VeryLazy",
   opts = {
     ring = {
-      history_length = 100, --- @type integer Default to 100
-      storage = "sqlite",
+      history_length = 100, ---@type integer Default to 100
+      storage = "shada", ---@type 'shada' | 'sqlite' | 'memory'
+      permanent_wrapper = vim.g.is_windows and function() -- Have to check WSL, not windows?
+        return require("yanky.wrappers").remove_carriage_return
+      end,
     },
     highlight = {
+      on_put = false,
+      on_yank = true,
       timer = 200,
+    },
+    textobj = {
+      enabled = true,
     },
   },
   init = function()
-    vim.keymap.set("n", "<leader>fP", function()
+    vim.keymap.set("n", "<leader>fy", function()
       require("telescope").extensions.yank_history.yank_history {}
     end, { desc = "Telescope | Open Yank History", silent = true })
     vim.keymap.set({ "n", "x" }, "y", "<Plug>(YankyYank)", { desc = "Yanky | Yank text", silent = true })
@@ -34,13 +42,13 @@ return {
     )
     vim.keymap.set(
       { "n", "x" },
-      "<leader>Pp",
+      "<leader>Yp",
       "<Plug>(YankyGPutAfter)",
       { desc = "Yanky | Put yanked text after selection", silent = true }
     )
     vim.keymap.set(
       { "n", "x" },
-      "<leader>PP",
+      "<leader>YP",
       "<Plug>(YankyGPutBefore)",
       { desc = "Yanky | Put yanked text before selection", silent = true }
     )
@@ -116,5 +124,8 @@ return {
       "<Plug>(YankyPutBeforeFilter)",
       { desc = "Yanky | Put before applying a filter", silent = true }
     )
+    vim.keymap.set({ "o", "x" }, "lp", function()
+      require("yanky.textobj").last_put()
+    end, { desc = "Yanky | Texobj last put", silent = true })
   end,
 }
