@@ -139,11 +139,11 @@ M.modules = {
     end
 
     if theme == "default" then
-      return "%#St_Percent_sep#" .. sep_l .. "%#St_Percent_icon#󰗈 %#St_Percent_text# %p %% "
+      return "%#St_Percent_sep#" .. sep_l .. "%#St_Percent_icon# %#St_Percent_text# %p %% "
     elseif theme == "vscode" or theme == "vscode_colored" then
       return "%#StText# %L"
     end
-    return gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#")
+    return gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#")
   end,
 
   harpoon = function()
