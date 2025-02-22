@@ -98,7 +98,7 @@ M.run_code = function()
       default = "bash %",
     },
     ts = {
-      default = "tsc % && node $fileBase",
+      default = "node --experimental-strip-types --trace-warnings %",
     },
   }
 
