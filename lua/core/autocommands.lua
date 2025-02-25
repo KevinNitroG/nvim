@@ -46,7 +46,6 @@ autocmd("FileType", {
 })
 
 -- Remove this if there's an issue
---[[
 autocmd({ "BufReadPost", "BufNewFile" }, {
   once = true,
   callback = function()
@@ -60,7 +59,6 @@ autocmd({ "BufReadPost", "BufNewFile" }, {
   group = general,
   desc = "Lazy load clipboard",
 })
-]]
 
 autocmd("TermOpen", {
   callback = function()
