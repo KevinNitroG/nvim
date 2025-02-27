@@ -8,6 +8,7 @@ vim.filetype.add {
     ["xaml"] = "xml",
   },
   pattern = {
+    [".*/.*%.env.*"] = "env",
     [".*/hypr/.*%.conf"] = "hyprlang",
     [".*/%.github[%w/]+workflows[%w/]+.*%.ya?ml"] = "yaml.github",
     [".*"] = {
