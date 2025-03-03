@@ -3,12 +3,13 @@
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
   event = {
-    "BufReadPost",
-    "BufNewFile",
+    "LspAttach",
   },
   opts = {
-    overflow = {
-      mode = "oneline", -- wrap, none, oneline
+    options = {
+      overflow = {
+        mode = "wrap", ---@type "wrap" | "none" | "oneline"
+      },
     },
   },
 }
