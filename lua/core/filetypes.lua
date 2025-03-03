@@ -6,6 +6,7 @@ vim.filetype.add {
     ["http"] = "http",
     ["regex"] = "regex",
     ["xaml"] = "xml",
+    ["plist"] = "xml",
   },
   pattern = {
     [".*/.*%.env.*"] = "env",
