@@ -9,7 +9,7 @@ vim.filetype.add {
     ["plist"] = "xml",
   },
   pattern = {
-    [".*/.*%.env.*"] = "env",
+    -- [".*/.*%.env.*"] = "env",
     [".*/.*compose%.ya?ml"] = "yaml.docker-compose",
     [".*/.*compose%.override%.ya?ml"] = "yaml.docker-compose",
     [".*/hypr/.*%.conf"] = "hyprlang",
