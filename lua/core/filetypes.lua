@@ -11,6 +11,7 @@ vim.filetype.add {
   pattern = {
     [".*/.*%.env.*"] = "env",
     [".*/.*compose%.ya?ml"] = "yaml.docker-compose",
+    [".*/.*compose%.override%.ya?ml"] = "yaml.docker-compose",
     [".*/hypr/.*%.conf"] = "hyprlang",
     [".*/%.github[%w/]+workflows[%w/]+.*%.ya?ml"] = "yaml.github",
     [".*"] = {
