@@ -20,8 +20,10 @@ return {
           {
             description = "Docker compose for yaml.docker-compose",
             fileMatch = {
-              "**/*compose.yml",
+              "**/*compose.override.yaml",
+              "**/*compose.override.yml",
               "**/*compose.yaml",
+              "**/*compose.yml",
             },
             name = "docker-compose.yml",
             url = "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json",
