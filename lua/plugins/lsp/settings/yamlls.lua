@@ -15,7 +15,11 @@ return {
         -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
         url = "",
       },
-      schemas = require("schemastore").yaml.schemas(),
+      schemas = require("schemastore").yaml.schemas {
+        ignore = {
+          -- "docker-compose.yml",
+        },
+      },
     },
   },
 }
