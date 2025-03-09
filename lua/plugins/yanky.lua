@@ -10,11 +10,11 @@ return {
     ring = {
       history_length = 100, ---@type integer Default to 100
       storage = "shada", ---@type 'shada' | 'sqlite' | 'memory'
-      permanent_wrapper = vim.g.is_windows
-          and function() -- Have to check WSL, not windows?
-            return require("yanky.wrappers").remove_carriage_return
-          end
-        or nil,
+      -- permanent_wrapper = vim.g.is_windows
+      --     and function() -- Have to check WSL, not windows?
+      --       return require("yanky.wrappers").remove_carriage_return
+      --     end
+      --   or nil,
     },
     highlight = {
       on_put = false,
