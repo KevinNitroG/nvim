@@ -122,7 +122,6 @@ return {
 
     renderer = {
       highlight_git = false,
-      -- root_folder_label = false,
       root_folder_label = ":~:s?$?",
       icons = {
         show = {

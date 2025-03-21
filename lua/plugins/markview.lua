@@ -12,6 +12,15 @@ local fts = {
 return {
   "OXY2DEV/markview.nvim",
   lazy = false,
+  opts = {
+    preview = {
+      filetypes = fts,
+      ignore_buftypes = {},
+      icon_provider = "devicons", -- "mini" or "devicons"
+    },
+    max_length = 99999,
+  },
+  -- enabled = false,
   ft = fts,
   dependencies = {
     -- You will not need this if you installed the
@@ -30,12 +39,6 @@ return {
       desc = "Markdown | Toggle View",
       ft = fts,
       silent = true,
-    },
-  },
-  opts = {
-    preview = {
-      icon_provider = "devicons", -- "mini" or "devicons"
-      filetypes = fts,
     },
   },
 }

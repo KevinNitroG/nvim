@@ -25,6 +25,17 @@ return {
     -- add any opts here
     -- for example
     provider = "copilot",
+    windows = {
+      width = 0.2 * vim.o.columns,
+      sidebar_header = {
+        enabled = false,
+      },
+    },
+    mappings = {
+      sidebar = {
+        close = { "q" },
+      },
+    },
     behaviour = {
       auto_set_highlight_group = true,
       auto_set_keymaps = false,
@@ -33,12 +44,6 @@ return {
     },
     hints = {
       enabled = true,
-    },
-    windows = {
-      width = 50,
-      sidebar_header = {
-        enabled = false,
-      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -70,15 +75,6 @@ return {
           use_absolute_path = true,
         },
       },
-    },
-    {
-      -- Make sure to set this up properly if you have lazy=true
-      "MeanderingProgrammer/render-markdown.nvim",
-      enabled = false,
-      opts = {
-        file_types = { "Avante" },
-      },
-      ft = { "Avante" },
     },
   },
 }
