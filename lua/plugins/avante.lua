@@ -10,12 +10,7 @@ return {
     "AvanteEdit",
   },
   init = function()
-    vim.keymap.set(
-      { "n", "v" },
-      "<leader>ac",
-      "<cmd>AvanteToggle<cr>",
-      { desc = "Avante | Toggle Chat", silent = true }
-    )
+    vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>Avante<cr>", { desc = "Avante | Toggle Chat", silent = true })
     vim.keymap.set("v", "<leader>ar", "<cmd>AvanteRefresh<cr>", { desc = "Avante | Refresh", silent = true })
     vim.keymap.set({ "n", "v" }, "<leader>ae", "<cmd>AvanteEdit<cr>", { desc = "Avante | Edit", silent = true })
   end,
