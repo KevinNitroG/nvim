@@ -1,10 +1,12 @@
 local M = {}
 local keymap = vim.keymap.set
-local cmp_nvim_lsp = require "cmp_nvim_lsp"
-local lsp_file_operations = require "lsp-file-operations"
 
-M.capabilities =
-  vim.tbl_deep_extend("force", cmp_nvim_lsp.default_capabilities(), lsp_file_operations.default_capabilities())
+M.capabilities = function()
+  local options = require("cmp_nvim_lsp").default_capabilities()
+  if vim.g.use_file_operation then
+    vim.tbl_deep_extend("force", options, require("lsp-file-operations").default_capabilities())
+  end
+end
 
 M.lsp_keymaps = function(bufnr)
   -- keymap("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, silent = true })
@@ -46,6 +48,9 @@ end
 M.on_attach = function(client, bufnr)
   M.lsp_keymaps(bufnr)
   M.lsp_highlight(client, bufnr)
+  if vim.g.use_lsp_workspace_diagnostic then
+    require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+  end
 end
 
 M.on_init = function(client, _)

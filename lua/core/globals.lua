@@ -27,7 +27,9 @@ local global = {
   is_windows = is_windows,
   path_delimiter = is_windows and ";" or ":",
   path_separator = is_windows and "\\" or "/",
-  inlayhint_default = true,
+  inlayhint_default = false,
+  use_file_operation = false,
+  use_lsp_workspace_diagnostic = false,
 }
 
 for name, value in pairs(global) do

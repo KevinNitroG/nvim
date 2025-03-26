@@ -8,11 +8,11 @@ return {
   },
   enabled = true,
   config = function()
-    local linters = require("lint").linters
-    vim.list_extend(linters.eslint.args, {
-      "--flag",
-      "unstable_config_lookup_from_file", -- for fixing file is ignored because it is located outside of the base path on my Windows
-    })
+    -- local linters = require("lint").linters
+    -- vim.list_extend(linters.eslint.args, {
+    --   "--flag",
+    -- "unstable_config_lookup_from_file", -- for fixing file is ignored because it is located outside of the base path on my Windows
+    -- })
 
     require("lint").linters_by_ft = {
       -- cpp = { "cpplint" },
