@@ -52,7 +52,7 @@ return {
 
     vim.keymap.set("n", "<leader>ft", "<cmd>Telescope themes<cr>", { desc = "Telescope | Themes", silent = true })
 
-    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Telescope | Buffers", silent = true })
+    vim.keymap.set("n", "<leader>fB", "<cmd>Telescope buffers<cr>", { desc = "Telescope | Buffers", silent = true })
 
     vim.keymap.set(
       "n",
@@ -76,6 +76,13 @@ return {
       "<leader>fr",
       "<cmd>Telescope oldfiles<cr>",
       { desc = "Telescope | Recent Files", silent = true }
+    )
+
+    vim.keymap.set(
+      "n",
+      "<leader>fb",
+      "<cmd>Telescope resume<cr>",
+      { desc = "Telescope | Resume", silent = true }
     )
 
     vim.keymap.set(
