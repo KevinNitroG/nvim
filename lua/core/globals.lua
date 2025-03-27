@@ -28,7 +28,7 @@ local global = {
   path_delimiter = is_windows and ";" or ":",
   path_separator = is_windows and "\\" or "/",
   inlayhint_default = false,
-  use_file_operation = false,
+  use_lsp_file_operation = false,
   use_lsp_workspace_diagnostic = false,
 }
 

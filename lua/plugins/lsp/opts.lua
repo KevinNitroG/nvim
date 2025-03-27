@@ -1,11 +1,9 @@
 local M = {}
 local keymap = vim.keymap.set
 
-M.capabilities = function()
-  local options = require("cmp_nvim_lsp").default_capabilities()
-  if vim.g.use_file_operation then
-    vim.tbl_deep_extend("force", options, require("lsp-file-operations").default_capabilities())
-  end
+M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+if vim.g.use_lsp_file_operation then
+  vim.tbl_deep_extend("force", M.capabilities, require("lsp-file-operations").default_capabilities())
 end
 
 M.lsp_keymaps = function(bufnr)
