@@ -99,6 +99,12 @@ return {
     end, { desc = "Options | Toggle Autocomplete" })
   end,
   opts = function(_, opts)
+    opts.snippets = {
+      expand = function(args)
+        require("luasnip").lsp_expand(args.body)
+      end,
+    }
+
     table.insert(opts.sources, 1, { name = "copilot" })
     table.insert(opts.sources, 3, { name = "emoji" })
     -- table.insert(opts.sources, 2, { name = "codeium" })
@@ -206,6 +212,20 @@ return {
     },
     {
       "hrsh7th/cmp-emoji",
+    },
+    {
+      "petertriho/cmp-git",
+      ft = "gitcommit",
+      config = function(_, opts)
+        require("cmp").setup.filetype("gitcommit", {
+          sources = require("cmp").config.sources({
+            { name = "git" },
+          }, {
+            { name = "buffer" },
+          }),
+        })
+        require("cmp_git").setup(opts)
+      end,
     },
   },
 }
