@@ -200,7 +200,7 @@ M.lsp = { signature = false }
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = true,
+  transparency = false,
   theme_toggle = { "catppuccin", "one_light" },
   hl_override = highlights.override,
   hl_add = highlights.add,
