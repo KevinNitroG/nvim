@@ -89,6 +89,7 @@ return {
       "vim",
       "vimdoc",
       "xml",
+      "yaml",
     },
     auto_install = vim.fn.executable "tree-sitter-cli" == 1,
     indent = {
