@@ -16,17 +16,17 @@ return {
 
     require("lint").linters_by_ft = {
       -- cpp = { "cpplint" },
+      -- javascript = { "eslint" },
+      -- javascriptreact = { "eslint" },
       -- markdown = { "markdownlint" },
+      -- python = { "ruff" }, -- Already used ruff-lsp
+      -- typescript = { "eslint" },
+      -- typescriptreact = { "eslint" },
       bash = { "shellcheck" },
-      github = { "actionlint" },
-      javascript = { "eslint" },
-      javascriptreact = { "eslint" },
-      latex = { "vale" },
-      python = { "ruff" }, -- Already used ruff-lsp
-      sh = { "shellcheck" },
-      typescript = { "eslint" },
-      typescriptreact = { "eslint" },
       gitcommit = { "commitlint" },
+      github = { "actionlint" },
+      latex = { "vale" },
+      sh = { "shellcheck" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {

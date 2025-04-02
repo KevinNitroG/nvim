@@ -1,17 +1,4 @@
 return {
-  filetypes = {
-    -- NOTE: Those commented filetypes use "ts_ls".
-    --
-    -- "javascript",
-    -- "javascriptreact",
-    -- "javascript.jsx",
-    -- "typescript",
-    -- "typescriptreact",
-    -- "typescript.tsx",
-    -- "vue",
-    "svelte",
-    "astro",
-  },
   settings = {
     codeAction = {
       disableRuleComment = {
@@ -19,7 +6,7 @@ return {
         location = "separateLine",
       },
       showDocumentation = {
-        enable = true,
+        enable = false,
       },
     },
     codeActionOnSave = {
