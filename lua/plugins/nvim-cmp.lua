@@ -135,11 +135,8 @@ return {
       "plsql",
       "sql",
     }, {
-      sources = {
-        { name = "copilot", priority = 0 },
+      sources = require("cmp").config.sources {
         { name = "vim-dadbod-completion", priority = 0 },
-        { name = "buffer", priority = 1 },
-        { name = "luasnip", priority = 1 },
       },
     })
 
