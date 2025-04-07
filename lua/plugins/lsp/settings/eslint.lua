@@ -13,9 +13,6 @@ return {
       enable = false,
       mode = "all",
     },
-    experimental = {
-      useFlatConfig = true,
-    },
     format = false,
     nodePath = "",
     onIgnoredFiles = "off",
@@ -24,7 +21,7 @@ return {
     },
     quiet = false,
     rulesCustomizations = {},
-    run = "onType",
+    run = "onSave",
     useESLintClass = false,
     validate = "on",
     workingDirectory = {
