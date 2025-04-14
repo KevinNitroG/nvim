@@ -21,6 +21,25 @@ return {
     "BufNewFile",
   },
   opts = {
+    -- root_dir = function(fname)
+    --   -- NOTE: https://github.com/pmizio/typescript-tools.nvim/blob/master/lua/typescript-tools/init.lua
+    --   local util = require "lspconfig.util"
+    --
+    --   local deno = require("plugins.lsp.settings.denols").root_dir(fname)
+    --   if deno ~= "" then
+    --     return
+    --   end
+    --
+    --   local root_dir = util.root_pattern "tsconfig.json"(fname)
+    --     or util.root_pattern("package.json", "jsconfig.json", ".git")(fname)
+    --
+    --   local node_modules_index = root_dir and root_dir:find("node_modules", 1, true)
+    --   if node_modules_index and node_modules_index > 0 then
+    --     root_dir = root_dir:sub(1, node_modules_index - 2)
+    --   end
+    --
+    --   return root_dir
+    -- end,
     on_attach = function(client, bufnr)
       client.server_capabilities.documentFormattingProvider = false
       client.server_capabilities.documentRangeFormattingProvider = false
