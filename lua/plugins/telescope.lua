@@ -78,12 +78,7 @@ return {
       { desc = "Telescope | Recent Files", silent = true }
     )
 
-    vim.keymap.set(
-      "n",
-      "<leader>fb",
-      "<cmd>Telescope resume<cr>",
-      { desc = "Telescope | Resume", silent = true }
-    )
+    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope resume<cr>", { desc = "Telescope | Resume", silent = true })
 
     vim.keymap.set(
       "n",
@@ -188,9 +183,8 @@ return {
         i = {
           ["<Tab>"] = require("telescope.actions").move_selection_next,
           ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
-          ["<C-j>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_worse,
-          ["<C-k>"] = require("telescope.actions").toggle_selection
-            + require("telescope.actions").move_selection_better,
+          ["<C-j>"] = require("telescope.actions").move_selection_worse,
+          ["<C-k>"] = require("telescope.actions").move_selection_better,
           ["<C-q>"] = require("trouble.sources.telescope").open,
           ["<C-f>"] = require("telescope.actions").preview_scrolling_right,
           ["<C-b>"] = require("telescope.actions").preview_scrolling_left,
