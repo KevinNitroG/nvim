@@ -14,10 +14,10 @@ vim.keymap.set("n", "<leader>R", "<cmd>%d+<cr>", { desc = "General | Remove All 
 vim.keymap.set("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Text", silent = true })
 
 -- Quit
-vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
+-- vim.keymap.set("n", "<leader>q", "<cmd>qa!<cr>", { desc = "General | Quit", silent = true })
 
 -- Write Quit
-vim.keymap.set("n", "<leader>x", "<cmd>wqa!<cr>", { desc = "General | Write Quit", silent = true })
+-- vim.keymap.set("n", "<leader>x", "<cmd>wqa!<cr>", { desc = "General | Write Quit", silent = true })
 
 -- Toggle Tabufline
 vim.keymap.set("n", "<leader>ob", function()
