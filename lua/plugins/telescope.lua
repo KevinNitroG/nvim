@@ -30,7 +30,7 @@ return {
 
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git_commits<cr>", { desc = "Telescope | Commits", silent = true })
 
-    vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope | Files", silent = true })
+    -- vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Telescope | Files", silent = true })
 
     vim.keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Telescope | Marks", silent = true })
 
@@ -117,7 +117,7 @@ return {
 
     vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "telescope | Git Files", silent = true })
 
-    vim.keymap.set("n", "<leader><leader>", function()
+    vim.keymap.set("n", "<leader>ff", function()
       require("telescope.builtin").find_files {
         find_command = {
           "fd",
@@ -190,7 +190,7 @@ return {
           ["<C-b>"] = require("telescope.actions").preview_scrolling_left,
         },
       },
-      file_ignore_patterns = { "node_modules", ".git/", ".git\\" },
+      file_ignore_patterns = { "node_modules", "\\.git/", "\\.git\\" },
     },
   },
 }
