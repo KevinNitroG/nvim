@@ -83,6 +83,13 @@ local setup_cr = function()
   end)
 end
 
+local sql_fts = {
+  "mysql",
+  "plsql",
+  "postgresql",
+  "sql",
+}
+
 ---@type NvPluginSpec
 -- NOTE: Completion Engine
 return {
@@ -128,17 +135,6 @@ return {
     opts.enabled = function()
       return (vim.g.toggle_cmp and vim.bo.buftype == "")
     end
-
-    -- Setup for dadbod
-    require("cmp").setup.filetype({
-      "mysql",
-      "plsql",
-      "sql",
-    }, {
-      sources = require("cmp").config.sources {
-        { name = "vim-dadbod-completion", priority = 0 },
-      },
-    })
 
     require("luasnip").filetype_extend("javascriptreact", { "html" })
     require("luasnip").filetype_extend("typescriptreact", { "html" })
@@ -209,6 +205,28 @@ return {
     },
     {
       "hrsh7th/cmp-emoji",
+    },
+    {
+      "ray-x/cmp-sql",
+      ft = "sql",
+      config = function()
+        require("cmp").setup.filetype(sql_fts, {
+          sources = require("cmp").config.sources {
+            { name = "sql", priority = 1 },
+          },
+        })
+      end,
+    },
+    {
+      "kristijanhusak/vim-dadbod-completion",
+      ft = sql_fts,
+      config = function()
+        require("cmp").setup.filetype(sql_fts, {
+          sources = require("cmp").config.sources {
+            { name = "vim-dadbod-completion", priority = 0 },
+          },
+        })
+      end,
     },
     {
       "petertriho/cmp-git",
