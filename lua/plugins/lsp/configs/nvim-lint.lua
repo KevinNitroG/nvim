@@ -8,11 +8,22 @@ return {
   },
   enabled = true,
   config = function()
-    -- local linters = require("lint").linters
+    local linters = require("lint").linters
     -- vim.list_extend(linters.eslint.args, {
     --   "--flag",
     -- "unstable_config_lookup_from_file", -- for fixing file is ignored because it is located outside of the base path on my Windows
     -- })
+
+    linters.postgresql = vim.tbl_deep_extend(
+      "force",
+      ---@diagnostic disable-next-line: param-type-mismatch
+      linters.sqlfluff,
+      { args = {
+        "lint",
+        "--format=json",
+        "--dialect=postgres",
+      } }
+    )
 
     require("lint").linters_by_ft = {
       -- cpp = { "cpplint" },
@@ -27,6 +38,8 @@ return {
       github = { "actionlint" },
       latex = { "vale" },
       sh = { "shellcheck" },
+      -- sql = { "sqlfluff" },
+      postgresql = { "postgresql" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {

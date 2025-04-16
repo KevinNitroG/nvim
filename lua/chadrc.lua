@@ -187,7 +187,8 @@ M.mason = {
     "dockerfile-language-server",
 
     -- Database
-    "sql-formatter",
+    "sqlfluff",
+    -- "sql-formatter",
     -- "sqls",
 
     -- Others

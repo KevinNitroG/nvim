@@ -23,11 +23,12 @@ local formatters_by_ft = {
   },
   scss = { "prettier" },
   sh = { "shfmt" },
-  sqloracle = { "sql_formatter" },
-  sql = { "sql_formatter" },
-  plsql = { "plsql_formatter" },
-  postgresql = { "postgresql_formatter" },
-  tsql = { "tsql_formatter" },
+  postgresql = { "pg_sqlfluff" },
+  -- plsql = { "plsql_formatter" },
+  -- postgresql = { "postgresql_formatter" },
+  -- sql = { "sql_formatter" },
+  -- sqloracle = { "sql_formatter" },
+  -- tsql = { "tsql_formatter" },
   typescript = { "prettier" },
   typescriptreact = { "prettier" },
   vue = { "prettier" },
@@ -69,31 +70,36 @@ local formatters = {
       -- "--ignore=F401", -- Unused import
     },
   },
-  ["mysql_formatter"] = {
-    command = "sql-formatter",
-    args = {
-      "--language=mysql",
-    },
-  },
-  ["plsql_formatter"] = {
-    command = "sql-formatter",
-    args = {
-      "--language=plsql",
-    },
-  },
-  ["postgresql_formatter"] = {
-    command = "sql-formatter",
-    args = {
-      "--language=postgresql",
-    },
-  },
-  ["tsql_formatter"] = {
-    command = "sql-formatter",
-    args = {
-      "--language=tsql",
-    },
-  },
+  -- ["mysql_formatter"] = {
+  --   command = "sql-formatter",
+  --   args = {
+  --     "--language=mysql",
+  --   },
+  -- },
+  -- ["plsql_formatter"] = {
+  --   command = "sql-formatter",
+  --   args = {
+  --     "--language=plsql",
+  --   },
+  -- },
+  -- ["postgresql_formatter"] = {
+  --   command = "sql-formatter",
+  --   args = {
+  --     "--language=postgresql",
+  --   },
+  -- },
+  -- ["tsql_formatter"] = {
+  --   command = "sql-formatter",
+  --   args = {
+  --     "--language=tsql",
+  --   },
+  -- },
 }
+
+formatters.pg_sqlfluff =
+  vim.tbl_extend("force", require "conform.formatters.sqlfluff", { append_args = {
+    "--dialect=postgres",
+  } })
 
 ---@type NvPluginSpec
 return {
