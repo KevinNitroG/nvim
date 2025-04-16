@@ -196,4 +196,7 @@ return {
       },
     },
   },
+  init = function()
+    vim.treesitter.language.register("bash", "env")
+  end,
 }

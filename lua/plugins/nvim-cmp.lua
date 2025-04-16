@@ -117,6 +117,16 @@ return {
     -- table.insert(opts.sources, 2, { name = "codeium" })
     -- table.insert(opts.sources, 1, { name = "supermaven" })
 
+    require("cmp").setup.filetype(sql_fts, {
+      sources = require("cmp").config.sources {
+        { name = "luasnip", priority = 0 },
+        { name = "nvim_lsp", priority = 0 },
+        { name = "vim-dadbod-completion", priority = 0 },
+        { name = "sql", priority = 3 },
+        { name = "buffer", priority = 4 },
+      },
+    })
+
     opts.mapping = vim.tbl_extend("force", {}, opts.mapping, {
       -- You can add here new mappings.
       ["<Tab>"] = setup_supertab_forward(),
@@ -209,24 +219,10 @@ return {
     {
       "ray-x/cmp-sql",
       ft = "sql",
-      config = function()
-        require("cmp").setup.filetype(sql_fts, {
-          sources = require("cmp").config.sources {
-            { name = "sql", priority = 1 },
-          },
-        })
-      end,
     },
     {
       "kristijanhusak/vim-dadbod-completion",
       ft = sql_fts,
-      config = function()
-        require("cmp").setup.filetype(sql_fts, {
-          sources = require("cmp").config.sources {
-            { name = "vim-dadbod-completion", priority = 0 },
-          },
-        })
-      end,
     },
     {
       "petertriho/cmp-git",
