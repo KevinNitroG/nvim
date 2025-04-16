@@ -119,10 +119,10 @@ return {
 
     require("cmp").setup.filetype(sql_fts, {
       sources = require("cmp").config.sources {
-        { name = "luasnip", priority = 0 },
         { name = "nvim_lsp", priority = 0 },
         { name = "vim-dadbod-completion", priority = 0 },
-        { name = "sql", priority = 3 },
+        { name = "sql", priority = 2 },
+        { name = "luasnip", priority = 3 },
         { name = "buffer", priority = 4 },
       },
     })
