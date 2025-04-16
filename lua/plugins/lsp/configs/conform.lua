@@ -25,6 +25,8 @@ local formatters_by_ft = {
   sh = { "shfmt" },
   sqloracle = { "sql_formatter" },
   sql = { "sql_formatter" },
+  plsql = { "plsql_formatter" },
+  postgresql = { "postgresql_formatter" },
   tsql = { "tsql_formatter" },
   typescript = { "prettier" },
   typescriptreact = { "prettier" },
@@ -71,6 +73,18 @@ local formatters = {
     command = "sql-formatter",
     args = {
       "--language=mysql",
+    },
+  },
+  ["plsql_formatter"] = {
+    command = "sql-formatter",
+    args = {
+      "--language=plsql",
+    },
+  },
+  ["postgresql_formatter"] = {
+    command = "sql-formatter",
+    args = {
+      "--language=postgresql",
     },
   },
   ["tsql_formatter"] = {
