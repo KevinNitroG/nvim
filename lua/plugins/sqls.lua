@@ -5,6 +5,7 @@ return {
   ft = "sql",
   config = function()
     require("lspconfig").sqls.setup {
+      autostart = false,
       on_attach = function(client, bufnr)
         require("sqls").on_attach(client, bufnr)
       end,

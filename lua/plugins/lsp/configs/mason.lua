@@ -73,6 +73,12 @@ return {
           require("lspconfig")[server_name].setup(opts)
         end,
       }
+
+      require("lspconfig")["postgres_lsp"].setup {
+        on_attach = on_attach,
+        on_init = on_init,
+        capabilities = capabilities,
+      }
     end,
   },
   opts = {
